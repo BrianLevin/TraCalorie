@@ -90,7 +90,10 @@ e.preventDefault();
       
       // Populate list with items
       UICtrl.populateItemList(items);
-      console.log('Initializing App...');
+
+      // Load event listeners
+      loadEventListeners();
+      
     }
   }
 
