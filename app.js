@@ -32,6 +32,7 @@ const ItemCtrl = (function(){
 
 // UI Controller
 const UICtrl = (function(){
+   
 
 const UISelectors = {
     itemList: '#item-list'
@@ -54,7 +55,10 @@ items.forEach(function(item){
       // Insert list items
       document.querySelector(UISelectors.itemList).innerHTML = html;
 
-    }
+    },
+    getSelectors: function(){
+        return UISelectors;
+      }
 }
 
 })();
@@ -62,6 +66,14 @@ items.forEach(function(item){
 
 // App Controller
 const App = (function(ItemCtrl, UICtrl){
+    // Load event listeners
+  const loadEventListeners = function(){
+    // Get UI selectors
+    const UISelectors = UICtrl.getSelectors();
+
+    // Add item event
+    document.querySelector(UISelectors.addBtn).addEventListener('click', itemAddSubmit);
+  }
  // Public methods
  return {
     init: function(){
