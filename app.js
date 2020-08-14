@@ -2,7 +2,11 @@
 // Item Controller
 const ItemCtrl = (function(){
 
-
+ // Item Constructor
+ const Item = function(id, name, calories){
+    this.id = id;
+    this.name = name;
+    this.calories = calories;
 })();
 
 
@@ -17,4 +21,4 @@ const UICtrl = (function(){
 const App = (function(ItemCtrl, UICtrl){
 
 
-})();
+})(ItemCtrl, UICtrl);
