@@ -46,6 +46,10 @@ items.forEach(function(item){
         </a>
       </li>`;
       });
+
+      // Insert list items
+      document.querySelector(UISelectors.itemList).innerHTML = html;
+
     }
 }
 
