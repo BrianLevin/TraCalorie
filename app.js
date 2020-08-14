@@ -18,6 +18,12 @@ const ItemCtrl = (function(){
     currentItem: null,
     totalCalories: 0
   }
+  // Public methods
+  return {
+    logData: function(){
+      return data;
+    }
+  }
 })();
 
 
