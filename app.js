@@ -57,10 +57,17 @@ items.forEach(function(item){
       document.querySelector(UISelectors.itemList).innerHTML = html;
 
     },
+    getItemInput: function(){
+        return {
+            name:document.querySelector(UISelectors.itemNameInput).value,
+            calories:document.querySelector(UISelectors.itemCaloriesInput).value
+          }
+
+    },
     getSelectors: function(){
         return UISelectors;
+    }
       }
-}
 
 })();
 
@@ -76,7 +83,7 @@ const App = (function(ItemCtrl, UICtrl){
     document.querySelector(UISelectors.addBtn).addEventListener('click', itemAddSubmit);
   }
   const itemAddSubmit=function(e){
-      
+
 // Get form input from UI Controller
 const input = UICtrl.getItemInput();
 
