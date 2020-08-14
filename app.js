@@ -20,6 +20,9 @@ const ItemCtrl = (function(){
   }
   // Public methods
   return {
+    getItems: function(){
+        return data.items;
+      },
     logData: function(){
       return data;
     }
@@ -30,6 +33,10 @@ const ItemCtrl = (function(){
 // UI Controller
 const UICtrl = (function(){
 
+ // Public methods
+ return {
+
+}
 
 })();
 
