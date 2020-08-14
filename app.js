@@ -76,6 +76,10 @@ const App = (function(ItemCtrl, UICtrl){
     document.querySelector(UISelectors.addBtn).addEventListener('click', itemAddSubmit);
   }
   const itemAddSubmit=function(e){
+      
+// Get form input from UI Controller
+const input = UICtrl.getItemInput();
+
 e.preventDefault();
 
   }
