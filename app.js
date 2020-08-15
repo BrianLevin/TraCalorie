@@ -68,14 +68,19 @@ const ItemCtrl = (function(){
 const UICtrl = (function(){
    
 
+// UI Controller
 const UISelectors = {
+    
     itemList: '#item-list',
     addBtn: '.add-btn',
+    updateBtn: '.update-btn',
+    deleteBtn: '.delete-btn',
+    backBtn: '.back-btn',
     itemNameInput: '#item-name',
     itemCaloriesInput: '#item-calories',
     totalCalories: '.total-calories'
-
   }
+  
 
  // Public methods
  return {
