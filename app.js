@@ -55,6 +55,9 @@ const ItemCtrl = (function(){
       setCurrentItem: function(item){
         data.currentItem = item;
       },
+      getCurrentItem: function(){
+        return data.currentItem;
+      },
     getTotalCalories: function(){
         let total = 0;
   
