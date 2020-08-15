@@ -126,6 +126,9 @@ items.forEach(function(item){
       hideList: function(){
         document.querySelector(UISelectors.itemList).style.display = 'none';
       },
+      showTotalCalories: function(totalCalories){
+        document.querySelector(UISelectors.totalCalories).textContent = totalCalories;
+      },
       getSelectors: function(){
         return UISelectors;
       }
@@ -178,7 +181,10 @@ const input = UICtrl.getItemInput();
         // Populate list with items
         UICtrl.populateItemList(items);
       }
-      
+
+
+      // Add total calories to UI
+      UICtrl.showTotalCalories(totalCalories);
       // Populate list with items
       UICtrl.populateItemList(items);
 
