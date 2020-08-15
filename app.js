@@ -189,6 +189,10 @@ const input = UICtrl.getItemInput();
       // Populate list with items
       UICtrl.populateItemList(items);
 
+    // Get total calories
+      const totalCalories = ItemCtrl.getTotalCalories();
+      // Add total calories to UI
+      UICtrl.showTotalCalories(totalCalories);
       // Load event listeners
       loadEventListeners();
       
