@@ -234,6 +234,26 @@ const input = UICtrl.getItemInput();
 
     e.preventDefault();
   }
+  // Update item submit
+  const itemUpdateSubmit = function(e){
+    // Get item input
+    const input = UICtrl.getItemInput();
+
+    // Update item
+    const updatedItem = ItemCtrl.updateItem(input.name, input.calories);
+
+    // Update UI
+    UICtrl.updateListItem(updatedItem);
+
+     // Get total calories
+     const totalCalories = ItemCtrl.getTotalCalories();
+     // Add total calories to UI
+     UICtrl.showTotalCalories(totalCalories);
+
+     UICtrl.clearEditState();
+
+    e.preventDefault();
+  }
   
  // Public methods
  return {
