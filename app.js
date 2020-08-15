@@ -142,6 +142,12 @@ items.forEach(function(item){
         document.querySelector(UISelectors.backBtn).style.display = 'none';
         document.querySelector(UISelectors.addBtn).style.display = 'inline';
       },
+      showEditState: function(){
+        document.querySelector(UISelectors.updateBtn).style.display = 'inline';
+        document.querySelector(UISelectors.deleteBtn).style.display = 'inline';
+        document.querySelector(UISelectors.backBtn).style.display = 'inline';
+        document.querySelector(UISelectors.addBtn).style.display = 'none';
+      },
       getSelectors: function(){
         return UISelectors;
       }
@@ -185,6 +191,9 @@ const input = UICtrl.getItemInput();
  // Public methods
  return {
     init: function(){
+  // Clear edit state / set initial set
+  UICtrl.clearEditState();
+
           // Fetch items from data structure
       const items = ItemCtrl.getItems();
     // Check if any items
