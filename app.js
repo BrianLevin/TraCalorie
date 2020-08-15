@@ -103,6 +103,7 @@ const UICtrl = (function(){
 const UISelectors = {
     
     itemList: '#item-list',
+    listItems: '#item-list li',
     addBtn: '.add-btn',
     updateBtn: '.update-btn',
     deleteBtn: '.delete-btn',
