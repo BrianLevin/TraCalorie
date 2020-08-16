@@ -120,6 +120,7 @@ const UISelectors = {
     updateBtn: '.update-btn',
     deleteBtn: '.delete-btn',
     backBtn: '.back-btn',
+    clearBtn: '.clear-btn',
     itemNameInput: '#item-name',
     itemCaloriesInput: '#item-calories',
     totalCalories: '.total-calories'
@@ -341,6 +342,24 @@ const input = UICtrl.getItemInput();
     UICtrl.clearEditState();
 
     e.preventDefault();
+  }
+
+  // Clear items event
+  const clearAllItemsClick = function(){
+    // Delete all items from data structure
+    ItemCtrl.clearAllItems();
+
+    // Get total calories
+    const totalCalories = ItemCtrl.getTotalCalories();
+    // Add total calories to UI
+    UICtrl.showTotalCalories(totalCalories);
+
+    // Remove from UI
+    UICtrl.removeItems();
+
+    // Hide UL
+    UICtrl.hideList();
+    
   }
 
   
