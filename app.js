@@ -44,11 +44,12 @@ const ItemCtrl = (function(){
  }
  // Data Structure / State
  const data = {
-    items: [
-      {id: 0, name: 'Steak Dinner', calories: 1200},
-      {id: 1, name: 'Cookie', calories: 400},
-      {id: 2, name: 'Eggs', calories: 300}
-    ],
+    // items: [
+     // {id: 0, name: 'Steak Dinner', calories: 1200},
+     // {id: 1, name: 'Cookie', calories: 400},
+     // {id: 2, name: 'Eggs', calories: 300}
+    //],
+    items: StorageCtrl.getItemsFromStorage(),
     currentItem: null,
     totalCalories: 0
   }
@@ -276,7 +277,7 @@ items.forEach(function(item){
 
 
 // App Controller
-const App = (function(ItemCtrl, UICtrl){
+const App = (function(ItemCtrl,StorageCtrl, UICtrl){
     // Load event listeners
   const loadEventListeners = function(){
     // Get UI selectors
@@ -323,6 +324,9 @@ const input = UICtrl.getItemInput();
      
       // Get total calories
       const totalCalories = ItemCtrl.getTotalCalories();
+      
+      //Store in localStorage
+      StorageCtrl.storeItem(newItem);
 
      // Clear fields
      UICtrl.clearInput();
@@ -450,7 +454,7 @@ const input = UICtrl.getItemInput();
     }
   }
 
-})(ItemCtrl, UICtrl);
+})(ItemCtrl, StorageCtrl, UICtrl);
 
 // Initialize App
 App.init();
