@@ -79,6 +79,10 @@ const ItemCtrl = (function(){
         // Remove item
         data.items.splice(index, 1);
       },
+      clearAllItems: function(){
+        data.items = [];
+      },
+      
       setCurrentItem: function(item){
         data.currentItem = item;
       },
